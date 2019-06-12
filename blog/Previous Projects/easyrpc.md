@@ -1,5 +1,5 @@
  # EASYRPC
- High availability rpc framework ,easy to use.
+ High availability rpc framework ,easy to use. 
  
  # Features
  - Both synchronize and asynchronize is allowed register to server.
