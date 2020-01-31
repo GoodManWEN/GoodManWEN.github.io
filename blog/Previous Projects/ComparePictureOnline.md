@@ -1,7 +1,7 @@
 ![](https://github.com/GoodManWEN/Compare_Picture_Online/blob/master/logo/LOGO.png)
 
 ## How to use?
-
+ 
 #### Set up server
 
     git clone https://github.com/GoodManWEN/Compare_Picture_Online.git
