@@ -1,7 +1,7 @@
 ![](https://i.imgur.com/xlZ9EfB.png)
 
 # What is EasySeedbox?
-EasySeedbox is an unobtrusive seedbox installation script for Ubuntu and Debian systems.
+EasySeedbox is an unobtrusive seedbox installation script for Ubuntu and Debian systems. 
 
 ## What's new in the Plus version?
 Now transmisson is accompanied by h5ai,
