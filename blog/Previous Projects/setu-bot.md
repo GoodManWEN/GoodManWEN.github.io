@@ -1,5 +1,5 @@
 # setu-bot
-build instructions for a coolq setu-bot. <br>
+build instructions for a coolq setu-bot. <br> 
 兴趣使然的色图机器人安装指南
 
 ## 使用方法
