@@ -5,7 +5,7 @@
 ![fury](https://badge.fury.io/py/aiohttp-jwtplus.svg) | ![licence](https://img.shields.io/github/license/GoodManWEN/aiohttp-jwtplus) | ![pyversions](https://img.shields.io/pypi/pyversions/aiohttp-jwtplus.svg) | ![Publish](https://github.com/GoodManWEN/aiohttp-jwtplus/workflows/Publish/badge.svg) | ![build](https://github.com/GoodManWEN/aiohttp-jwtplus/workflows/Build/badge.svg)
 
 Aiohttp middleware and helper utils for working with JSON web token(signature).
-Added a post router for improving security level of SPAs &amp; auto refresh secrets.
+Added a post router for improving security level of SPAs &amp; auto refresh secrets. 
 
 - Secret auto refresh.
 - Totally separated content.
