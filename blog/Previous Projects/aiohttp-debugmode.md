@@ -1,5 +1,5 @@
 # aiohttp-debugmode
-This package helps you easily start a aiohttp develpment server in subprocess ,everytime dependencies/statics are modified ,daemon process will automatically reload server thus helps you automation your workflow. Aiohttp-debugtoolbar included.
+This package helps you easily start a aiohttp develpment server in subprocess ,everytime dependencies/statics are modified ,daemon process will automatically reload server thus helps you automation your workflow. Aiohttp-debugtoolbar included. 
 
 .VERSION | LICENCE | VERSION | PUBLISH | BUILD
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
