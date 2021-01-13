@@ -6,7 +6,7 @@
 
 Python FNV hash implementation based on cython, to give you an alternative choice when you need a high speed hash in python, could reduce the latency of a single call to tens of nanoseconds.
 
-Because of deprecation, we selectively did not implement FNV-0.
+Because of deprecation, we selectively did not implement FNV-0. 
 
 With code structure referenced to [https://github.com/znerol/py-fnvhash](https://github.com/znerol/py-fnvhash)
 
