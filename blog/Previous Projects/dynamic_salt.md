@@ -4,7 +4,7 @@
 :-------------------------:|:-------------------------:
 ![licence](https://img.shields.io/github/license/GoodManWEN/dynamic_salt) | ![Build](https://github.com/GoodManWEN/dynamic_salt/workflows/Build/badge.svg)
 
-Accepts a byte string, add salt at dynamic locations & values under some certain rules.
+Accepts a byte string, add salt at dynamic locations & values under some certain rules. 
 
 ## Usage
 
