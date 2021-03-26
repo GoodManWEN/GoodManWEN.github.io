@@ -4,7 +4,7 @@
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![fury](https://img.shields.io/pypi/v/cx-Oracle-async.svg) | ![licence](https://img.shields.io/github/license/GoodManWEN/cx_Oracle_async) | ![pyversions](https://img.shields.io/pypi/pyversions/cx-Oracle-async.svg) | ![Publish](https://github.com/GoodManWEN/cx_Oracle_async/workflows/Publish/badge.svg) | ![Build](https://github.com/GoodManWEN/cx_Oracle_async/workflows/Build/badge.svg) | ![Docs](https://readthedocs.org/projects/cx-oracle-async/badge/?version=latest) | ![Visitors](https://visitor-badge.glitch.me/badge?page_id=goodmanwen.cx_Oracle_async&style=flat-square&color=0088cc)
 
-A very simple asynchronous wrapper that allows you to get access to the Oracle database in asyncio programs.
+A very simple asynchronous wrapper that allows you to get access to the Oracle database in asyncio programs. 
 
 Easy to use , buy may not the best practice for efficiency concern.
 
