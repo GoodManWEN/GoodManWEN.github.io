@@ -37,18 +37,21 @@ def mywalk(directory, append_pointer, header, copy_target):
             file_path = os.path.join(current_path, file)
             if determine_markdown_file(file):
                 title, abstract = get_title_and_abstract(file_path)
+                last_edit_time = get_modify_time(file_path)
                 append_pointer.append({
                     'name': file,
                     'path': f"{header}_{split_file_name(file).replace(' ','_')}.json",
-                    'lastedittime': get_modify_time(file_path),
+                    'lastedittime': last_edit_time ,
                     'title': title,
                     'abstract': abstract,
                     'size': os.path.getsize(file_path),
                 })
                 with open(file_path,'r',encoding='utf-8') as fp:
                     content = fp.read()
-                with open(os.path.join(copy_target, f"{header}_{split_file_name(file).replace(' ','_')}.json"),'w',encoding='utf-8') as fp:
+                output_target = os.path.join(copy_target, f"{header}_{split_file_name(file).replace(' ','_')}.json")
+                with open(output_target,'w',encoding='utf-8') as fp:
                     fp.write(json.dumps({'data':content}))
+                os.utime(output_target, (last_edit_time, last_edit_time))
         
         for path in sub_paths:
             path_path = os.path.join(current_path, path)
