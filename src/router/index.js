@@ -1,53 +1,52 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '../store'
-import HelloWorld from '../components/HelloWorld'
-import Blank from '../components/Blank'
+import LoginPage from '../components/LoginPage/LoginPage'
+import Desktop from '../components/Desktop/Desktop'
+import Down from '../components/Down'
 
 Vue.use(VueRouter)
 
-// 由本路由跳转到本路由会报错，这里添加了一个拦截console输出的指令
-const originalPush = VueRouter.prototype.push 
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => {window.console.log(err)})
-}
-
 const routes = [
   {
-    path: '/',
-    name: "Index",
-    component: HelloWorld,
+    path: '/terminated',
+    name: "Down",
+    component: Down,
     meta : {
-      title:"MY TITLE"
+      title:"No signal."
+    }
+  },
+  {
+    path: '/login',
+    name: "LoginPage",
+    component: LoginPage,
+    meta : {
+      title:"Deepin"
+    }
+  },
+  {
+    path: '/desktop',
+    name: "Desktop",
+    component: Desktop,
+    meta : {
+      title:"Welcom to WEN's blog"
     }
   },
   {
     path:"*",
-    name: "404",
-    component: Blank,
-    meta : {
-      title:"404 NOT FOUND"
-    }
+    redirect:'/login',
   },
 ]
 
+
 const router = new VueRouter({
-  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
 
 router.beforeEach((to, from, next) => {
-  to;from;next;
-  console.log('[router triggered] auth status:',store.state.authed)
-  console.log('[router triggered] mode:',store.state.theme)
-  if (!store.state.authed) {
-    if (to.name == 'Index') {
-      next()
-    } else {
-      next({name: 'Index'})
-    }
-  }
+  store.commit('show_interlude')
+  next()
 })
 
 export default router

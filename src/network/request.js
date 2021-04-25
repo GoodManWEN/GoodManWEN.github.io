@@ -32,6 +32,12 @@ let request = {
     })
     instance.interceptors.request.use(rcall , rerr)
     return instance(config)
-  }
+  },
+  raw: (config) => {
+    const instance = axios.create({
+      timeout: 10000
+    })
+    return instance(config)
+  },
 }
 export {request}

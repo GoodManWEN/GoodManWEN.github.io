@@ -27,6 +27,30 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      mygray: {
+        lighter: 'rgba(243,243,243)',
+        light: 'rgba(81,90,156)',
+        DEFAULT: 'rgba(81,90,156)',
+        dark: 'rgba(61,70,126)',
+        darker: 'rgba(45,60,106)',
+        purple: 'rgba(135,142,190)',
+        deeldark: 'rgba(5,18,65)',
+        b1: 'rgba(206,206,206)',
+        b2: 'rgba(246,246,246)',
+        b3: 'rgba(227,227,227)',
+        b4: 'rgba(0,129,255)',
+        b5: 'rgba(51,156,255)',
+        b6: 'rgba(66,77,104)',
+        b7: 'rgba(136,142,159)',
+        b8: 'rgba(91,101,124)',
+        b9: 'rgba(104,107,112)',
+        b10: 'rgba(183,184,185)',
+        b11: 'rgba(50,150,244)',
+        b12: 'rgba(50,50,50)',
+        b13: 'rgba(0,104,202)',
+        b14: 'rgba(9,136,255)',
+        b15: 'rgba(141,141,141)',
+      },
     },
     spacing: {
       px: '1px',
@@ -265,6 +289,12 @@ module.exports = {
         "196": "49rem",
         "200": "50rem",
       }),
+      spacing: {
+        '2/3': '66.666667%'
+      },
+      spacing: {
+        '9/16': '56.25%'
+      }
     },
     fill: { current: 'currentColor' },
     grayscale: {
@@ -690,6 +720,7 @@ module.exports = {
     },
     rotate: {
       '-180': '-180deg',
+      '-120': '-120deg',
       '-90': '-90deg',
       '-45': '-45deg',
       '-12': '-12deg',
@@ -705,6 +736,7 @@ module.exports = {
       12: '12deg',
       45: '45deg',
       90: '90deg',
+      120: '120deg',
       180: '180deg',
     },
     saturate: {
@@ -912,7 +944,7 @@ module.exports = {
     backgroundSize: ['responsive'],
     blur: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
+    borderColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus', 'active'],
     borderOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],

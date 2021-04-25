@@ -18,6 +18,7 @@ import cookies from './plugins/cookies'
 import utils from './plugins/utils'
 
 
+
 // vuetify
 Vue.config.productionTip = false
 // axios

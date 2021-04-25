@@ -1,5 +1,5 @@
 {
-  "name": "allinone",
+  "name": "Deepin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,9 +11,11 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "markdown-it-vue": "^1.1.6",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0",
     "vue": "^2.6.11",
+    "vue-aplayer": "^1.6.1",
     "vue-axios": "^3.2.4",
     "vue-router": "^3.5.1",
     "vue-wechat-title": "^2.0.7",
