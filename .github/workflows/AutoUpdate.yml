@@ -21,6 +21,7 @@ jobs:
           python-version: 3.8
       - name: Build
         run: |
+          git ls-files | while read file; do touch -d $(git log -1 --format="@%ct" "$file") "$file"; done
           python3 generate.py
           npm install
           npm run build
