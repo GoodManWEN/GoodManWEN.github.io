@@ -59,9 +59,6 @@ This project is inspired by:
 - [https://github.com/vivek9patel/vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)
 - [https://codepen.io/Krishna1947/pen/KKgZgLd](https://codepen.io/Krishna1947/pen/KKgZgLd)
 
-### About Deepin
-
-The author of this project has no official relationship with deepin, if you wish to try out the deepin system after viewing this project, please visit [https://www.deepin.org/en/](https://www.deepin.org/en/)
 
 ### Contributing
 
@@ -76,6 +73,10 @@ As mentioned above, since my daily work field is mainly not front-end programmin
 - Except for some parts, the animations are mainly come from `animate.css`, the performance is different from the original version.
 
 Similarly, this framework does not perform well on mobile platforms. This is partly due to compatibility issues with `animate.css`, and others comes from that many designs are designed for desktop platforms, and I don't know how to arrange them on mobile screens.
+
+## About Deepin
+
+The author of this project has no official relationship with deepin, if you wish to try out the deepin system after viewing this project, please visit [https://www.deepin.org/en/](https://www.deepin.org/en/)
 
 ### Spacial thanks
 
