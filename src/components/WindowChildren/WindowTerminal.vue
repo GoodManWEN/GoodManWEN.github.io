@@ -263,11 +263,14 @@ export default {
             name: 'Down',
           })
         },2000)
+      } else if (cmd === 'clear') {
+        this.input_text = this.header
+        this.protection_length = this.header.length
       } else {
         this.push_output("")
         this.push_output("")
         this.push_output("Command "+cmd+" not found or not yet implemented.")
-        this.push_output("Current available commands: ['ls', 'cd', 'cat', 'halt'].")
+        this.push_output("Current available commands: ['ls', 'cd', 'cat', 'clear' ,'halt'].")
         this.cmd_reset()
       }
     },
