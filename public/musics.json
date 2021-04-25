@@ -1,1 +1,104 @@
-[{"title":"だから僕は音楽を辞めた (所以我放弃了音乐)","artist":"ヨルシカ (Yorushika)","src":"","pic":"/musiccovers/m0.png"},{"title":"Песня о тревожной молодости","artist":"Хор Московского Сретенского монасты","src":"","pic":"/musiccovers/m1.png"},{"title":"あの微笑みを忘れないで","artist":"ZARD (ザード)","src":"","pic":"/musiccovers/m2.png"},{"title":"告白の夜 (告白之夜) (LIVE!! Ayasa Theater episode 7)","artist":"Ayasa绚沙","src":"","pic":"/musiccovers/m3.png"},{"title":"红楼梦序曲","artist":"陈力","src":"","pic":"/musiccovers/m4.png"},{"title":"I'll remember you (我会记得你)","artist":"佐坂めぐみ","src":"","pic":"/musiccovers/m5.png"},{"title":"永遠の嘘をついてくれ (给我一个永远的谎言)","artist":"中岛美雪 (中島みゆき)","src":"","pic":"/musiccovers/m6.png"},{"title":"象","artist":"高桥优 (たかはし ゆう)","src":"","pic":"/musiccovers/m7.png"},{"title":"月牙湾","artist":"F.I.R.飞儿乐团","src":"","pic":"/musiccovers/m8.png"},{"title":"Cry Cry","artist":"T-ara (티아라)","src":"","pic":"/musiccovers/m9.png"},{"title":"Twinkle Starlight","artist":"佐咲纱花 (ささき さやか)","src":"","pic":"/musiccovers/m10.png"},{"title":"Komm, süsser Tod (甘き死よ、来たれ)","artist":"ARIANNE","src":"","pic":"/musiccovers/m11.png"},{"title":"在太行山上","artist":"中国交响乐团合唱团","src":"","pic":"/musiccovers/m12.png"},{"title":"エンジェルウインク (Angel Wink)","artist":"茅野愛衣 (かやの あい)","src":"","pic":"/musiccovers/m13.png"},{"title":"La Reine De Saba","artist":"Paul Mauriat","src":"","pic":"/musiccovers/m14.png"},{"title":"シルエット・ダンサー","artist":"今井優子 (いまい ゆうこ)","src":"","pic":"/musiccovers/m15.png"},{"title":"and I'm home","artist":"喜多村英梨 (きたむら えり)","src":"","pic":"/musiccovers/m16.png"}]
+[
+  {
+    "title":"だから僕は音楽を辞めた (所以我放弃了音乐)",
+    "artist":"ヨルシカ (Yorushika)",
+    "src":"",
+    "pic":"/musiccovers/m0.png"
+  },
+  {
+    "title":"Песня о тревожной молодости",
+    "artist":"Хор Московского Сретенского монасты",
+    "src":"",
+    "pic":"/musiccovers/m1.png"
+  },
+  {
+    "title":"あの微笑みを忘れないで",
+    "artist":"ZARD (ザード)",
+    "src":"",
+    "pic":"/musiccovers/m2.png"
+  },
+  {
+    "title":"告白の夜 (告白之夜) (LIVE!! Ayasa Theater episode 7)",
+    "artist":"Ayasa绚沙",
+    "src":"",
+    "pic":"/musiccovers/m3.png"
+  },
+  {
+    "title":"红楼梦序曲",
+    "artist":"陈力",
+    "src":"",
+    "pic":"/musiccovers/m4.png"
+  },
+  {
+    "title":"I'll remember you ",
+    "artist":"佐坂めぐみ",
+    "src":"",
+    "pic":"/musiccovers/m5.png"
+  },
+  {
+    "title":"永遠の嘘をついてくれ (给我一个永远的谎言)",
+    "artist":"中島みゆき",
+    "src":"",
+    "pic":"/musiccovers/m6.png"
+  },
+  {
+    "title":"象",
+    "artist":"高橋 優 (たかはし ゆう)",
+    "src":"",
+    "pic":"/musiccovers/m7.png"
+  },
+  {
+    "title":"月牙湾",
+    "artist":"F.I.R.飞儿乐团",
+    "src":"",
+    "pic":"/musiccovers/m8.png"
+  },
+  {
+    "title":"Cry Cry",
+    "artist":"T-ara (티아라)",
+    "src":"",
+    "pic":"/musiccovers/m9.png"
+  },
+  {
+    "title":"Twinkle Starlight",
+    "artist":"佐咲 紗花 (ささき さやか)",
+    "src":"",
+    "pic":"/musiccovers/m10.png"
+  },
+  {
+    "title":"Komm, süsser Tod (甘き死よ、来たれ)",
+    "artist":"ARIANNE",
+    "src":"",
+    "pic":"/musiccovers/m11.png"
+  },
+  {
+    "title":"在太行山上",
+    "artist":"中国交响乐团合唱团",
+    "src":"",
+    "pic":"/musiccovers/m12.png"
+  },
+  {
+    "title":"エンジェルウインク (Angel Wink)",
+    "artist":"茅野愛衣 (かやの あい)",
+    "src":"",
+    "pic":"/musiccovers/m13.png"
+  },
+  {
+    "title":"La Reine De Saba",
+    "artist":"Paul Mauriat",
+    "src":"",
+    "pic":"/musiccovers/m14.png"
+  },
+  {
+    "title":"シルエット・ダンサー",
+    "artist":"今井優子 (いまい ゆうこ)",
+    "src":"",
+    "pic":"/musiccovers/m15.png"
+  },
+  {
+    "title":"and I'm home",
+    "artist":"喜多村英梨 (きたむら えり)",
+    "src":"",
+    "pic":"/musiccovers/m16.png"
+  }
+]

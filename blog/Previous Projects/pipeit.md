@@ -5,7 +5,7 @@
 ![fury](https://badge.fury.io/py/pipeit.svg)  |  ![licence](https://img.shields.io/github/license/GoodManWEN/pipeit) | ![pyversions](https://img.shields.io/pypi/pyversions/pipeit.svg) | ![Publish](https://github.com/GoodManWEN/pipeit/workflows/Publish/badge.svg) | ![Build](https://github.com/GoodManWEN/pipeit/workflows/Build/badge.svg)
 
 
-This is a super simple wrapper , let's use python functional programming like Unix pipe!
+Let's use python functional programming like Unix pipe!
 
 Inspired by [abersheeran/only-pipe](https://github.com/abersheeran/only-pipe) , [czheo/syntax_sugar_python](https://github.com/czheo/syntax_sugar_python) , [pipetools](https://pypi.org/project/pipetools/)
 

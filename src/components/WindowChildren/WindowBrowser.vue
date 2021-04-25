@@ -50,10 +50,10 @@ export default {
       tipoffsetY:0,
       tipoffsetX:0,
       show_lock_tip:false,
-      input_src:"https://sogou.com/",
-      real_src:'https://sogou.com/',
+      input_src:"https://www.google.com/webhp?igu=1",
+      real_src:'https://www.google.com/webhp?igu=1',
       no_http:false,
-      href_stack:['https://sogou.com/',],
+      href_stack:['https://www.google.com/webhp?igu=1',],
       href_stack_pointer:0,
     }
   },
@@ -125,7 +125,7 @@ export default {
       } else {
         noheader = true
       }
-      let googlepat = /^((https|http|ftp|rtsp|mms)?:\/\/)?[w.]*google\.com(\/)*/
+      let googlepat = /^((https|http|ftp|rtsp|mms)?:\/\/)?[w.]*google\.com(\/)*$/
       if (googlepat.test(this.input_src)) {
         this.input_src = 'https://www.google.com/webhp?igu=1'
         noheader = false
