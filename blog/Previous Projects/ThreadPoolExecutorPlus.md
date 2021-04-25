@@ -18,7 +18,7 @@ The reason why this pack exists is we would like to solve several specific pain 
     pip install ThreadPoolExecutorPlus
 
 ## Usage
-Same api as concurrent.futures.ThreadPoolExecutor , with some more control function added:
+Same api as concurrent.futures.ThreadPoolExecutor , with some more control function added: 
 
 ##### set_daemon_opts(min_workers = None, max_workers = None, keep_alive_time = None)
     

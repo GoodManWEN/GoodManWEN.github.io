@@ -51,7 +51,6 @@ def mywalk(directory, append_pointer, header, copy_target):
                 output_target = os.path.join(copy_target, f"{header}_{split_file_name(file).replace(' ','_')}.json")
                 with open(output_target,'w',encoding='utf-8') as fp:
                     fp.write(json.dumps({'data':content}))
-                os.utime(output_target, (last_edit_time, last_edit_time))
         
         for path in sub_paths:
             path_path = os.path.join(current_path, path)
