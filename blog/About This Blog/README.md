@@ -12,12 +12,12 @@ cd GoodManWEN.github.io.git
 npm install
 npm run serve
 ```
-At this point you should get the functionality same as a basic blog framework, and if you want to change the blog content to your own, you should modify **you should change the content in the /blog directory, All items ending in .md will be recognized**, and then:
+At this point you should get the functionality same as a basic blog framework, and if you want to change the blog content to your own, you should modify **you should change the content in the /blog directory**, and then:
 ```
 python3 generate.py
 npm run build
 ```
-This will convert the pages into static distribution files in `/docs` directory, you can serve them in any web framework.
+This will convert the pages into static distribution files in `/dist` directory, you can serve them in any web framework.
 
 ### What's the difference from other comparable programs?
 
@@ -26,8 +26,6 @@ I happened to write this project because I personally need a project demonstrati
 ### How to update blog contents?
 
 If your project is hosted by **Github Pages**, you can simply modify the contents of the blog directory and then submit a commit. Content will be update automatically by Actions, and then distributed to the website (there may be a delay in updates due to caching policies).
-
-If your repository comes directly from a fork of this project, then maybe you need to check your actions execution permissions, as far as I know some actions in forked repo may be turned off auto-execution until you turn them on manually.
 
 ### What if I'd like to customize the music module?
 
@@ -61,9 +59,6 @@ This project is inspired by:
 - [https://github.com/vivek9patel/vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)
 - [https://codepen.io/Krishna1947/pen/KKgZgLd](https://codepen.io/Krishna1947/pen/KKgZgLd)
 
-### About Deepin
-
-The author of this project has no official relationship with deepin, if you wish to try out the deepin system after viewing this project, please visit [https://www.deepin.org/en/](https://www.deepin.org/en/)
 
 ### Contributing
 
@@ -77,7 +72,11 @@ As mentioned above, since my daily work field is mainly not front-end programmin
 - Icons, to get the icons quickly, they come from screenshots.
 - Except for some parts, the animations are mainly come from `animate.css`, the performance is different from the original version.
 
-Similarly, although this framework follows responsive design, it does not perform well on mobile platforms. This is partly due to compatibility issues with `animate.css`, and others comes from that many designs are designed for desktop platforms, and I don't know how to arrange them on mobile screens.
+Similarly, this framework does not perform well on mobile platforms. This is partly due to compatibility issues with `animate.css`, and others comes from that many designs are designed for desktop platforms, and I don't know how to arrange them on mobile screens.
+
+## About Deepin
+
+The author of this project has no official relationship with deepin, if you wish to try out the deepin system after viewing this project, please visit [https://www.deepin.org/en/](https://www.deepin.org/en/)
 
 ### Spacial thanks
 
