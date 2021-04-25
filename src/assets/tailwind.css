@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .text-shadow {
+      text-shadow: 0px 0px 4px rgba(132,132,132,.5);
+    }
+    .text-shadow-sm {
+      text-shadow: 0px 0px 6px rgba(132,132,132,.5);
+    }
+    .text-shadow-md {
+      text-shadow: 0px 0px 10px rgba(132,132,132,.5);
+    }
+    .text-shadow-lg {
+      text-shadow: 0px 0px 20px rgba(132,132,132,.5);
+    }
+    .text-shadow-xl {
+      text-shadow: 0px 0px 30px rgba(132,132,132,.5);
+    }
+    .text-shadow-none {
+      text-shadow: none;
+    }
+  } 
+}
