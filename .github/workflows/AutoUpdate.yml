@@ -1,0 +1,28 @@
+name: AutoUpdate
+
+on: 
+  push:
+    branches:
+      - 'master'
+      - 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Build
+        run: |
+          python3 generate.py
+          npm install
+          npm run build
+          
+      
