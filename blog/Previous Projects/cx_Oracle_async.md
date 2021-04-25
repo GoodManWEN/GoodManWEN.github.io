@@ -38,7 +38,7 @@ single line insertion | 1341.88 q/s | 1898 q/s | 1685.17 q/s
 *AMD Ryzen 3700x*<br>
 *Windows 10 LTSC*<br>
 *Oracle 19c*<br>
-*You can find performance test codes [here](https://github.com/GoodManWEN/cx_Oracle_async/blob/main/misc).*
+*You can find performance test codes [here](https://github.com/GoodManWEN/cx_Oracle_async/blob/main/misc).* 
 
 ## Examples
 Before running examples , make sure you've already installed a [Oracle Client](https://cx-oracle-async.readthedocs.io/en/latest/user_guide/quickstart.html#install-oracle-client) on your machine.
