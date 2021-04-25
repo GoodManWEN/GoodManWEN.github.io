@@ -2,6 +2,7 @@ module.exports = {
   transpileDependencies: [
     'vuetify'
   ],
+  outputDir: './docs',
   devServer:{
     host:'0.0.0.0',
     proxy:{
