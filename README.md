@@ -1,6 +1,8 @@
-# GoodManWEN.github.io
+![](https://raw.githubusercontent.com/GoodManWEN/GoodManWEN.github.io/main/misc/figure.png)
 
-A web-driven blog simulating linux system's GUI, using theme of Deepin distro. You can use markdown to write blogs and use it to serve your own technical resumes.
+# About GoodManWEN.github.io
+
+A website simulating linux system's GUI, using theme of Deepin distro. You can write blogs with markdown and use it to serve your own technical resumes.
 
 #### [中文文档](https://github.com/GoodManWEN/GoodManWEN.github.io/blob/main/misc/readme_chs.md)
 
@@ -17,7 +19,7 @@ At this point you should get the functionality same as a basic blog framework, a
 python3 generate.py
 npm run build
 ```
-This will convert the pages into static distribution files in `/dist` directory, you can serve them in any web framework.
+This will convert the pages into static distribution files in `/docs` directory, you can serve them in any web framework.
 
 ### What's the difference from other comparable programs?
 

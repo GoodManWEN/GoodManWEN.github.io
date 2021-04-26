@@ -69,9 +69,6 @@ vue-aplayer
 - [https://github.com/vivek9patel/vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)
 - [https://codepen.io/Krishna1947/pen/KKgZgLd](https://codepen.io/Krishna1947/pen/KKgZgLd)
 
-### 关于 Deepin
-
-作者本人与Deepin官方没有任何关系，纯粹由于兴趣爱好和宣传国产系统的目的编写，不以项目的任何形式盈利为目的。 如果您对Deepin感兴趣，请访问官方网站 [https://www.deepin.org/en/](https://www.deepin.org/)
 
 ### 贡献方式
 
@@ -79,7 +76,7 @@ vue-aplayer
 
 ### 现存的问题
 
-由于作者本身是数据分析和高性能计算专业，属于一个严重跑题的非专业前端开发。并且由于时间有限，实际编码时间大概在三天左右，很多地方的处理是设想在小规模数据量下能良好工作即可，所以一切从简实现的，这必然会带来许多问题。
+由于作者本身是大数据专业，属于一个严重跑题的非专业前端开发。并且由于时间有限，实际编码时间大概在三天左右，很多地方的处理是设想在小规模数据量下能良好工作即可，所以一切从简实现的，这必然会带来许多问题。
 
 目前已知的模仿UI方面与原生界面的不同：
 - 我没有时间调教字体，本界面中字体是一套通用字体，与原版有较大差异。
@@ -88,6 +85,10 @@ vue-aplayer
 
 同样地，虽然这个模块遵守响应式设计，但实际在移动平台表现不佳。原因一部分来自于animate.css在移动平台的兼容性问题，另外一部分来自于很多UI专门为桌面平台设计，作者本人也不知道在移动平台上应该如何排版它们。
 
-### 特殊感谢
+## 关于 Deepin
+
+作者本人与Deepin官方没有任何关系，纯粹由于兴趣爱好和宣传国产系统的目的编写，不以项目的任何形式盈利为目的。 如果您对Deepin感兴趣，请访问官方网站 [https://www.deepin.org/en/](https://www.deepin.org/)
+
+### 鸣谢
 
 谢谢你浏览这个项目，希望你能在探索中获得乐趣。
