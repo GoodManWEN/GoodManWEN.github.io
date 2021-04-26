@@ -25,6 +25,14 @@ const routes = [
     }
   },
   {
+    path: '/desktop/post/:postfilename',
+    name: "Desktop",
+    component: Desktop,
+    meta : {
+      title:"Welcom to WEN's blog"
+    }
+  },
+  {
     path: '/desktop',
     name: "Desktop",
     component: Desktop,

@@ -79,6 +79,7 @@ export default {
       this.map_add_uuid(res.data)
       this.map = res.data
       this.$store.commit('commit_filemap', res.data)
+      this.deal_with_postfilename()
     })
     .catch((err) => {
       console.log("error:", err)
@@ -163,6 +164,44 @@ export default {
     },
     bg_mr_clicked(){
       this.$store.commit('show_context_menu')
+    },
+    deal_with_postfilename(){
+      let target = this.$route.params.postfilename
+      if (target === undefined) {
+        return 
+      }
+      // else 
+      let digin = (dir) => {
+        for (let item of dir) {
+          if (item.children === undefined) {
+            if (item.name === target) {
+              return item
+            }
+          } else {
+            let r = digin(item.children)
+            if (r != null) {
+              return r
+            }
+          }
+        }
+        return null
+      }
+      let res = digin(this.map)
+      if (res != null) {
+        this.$store.commit('open_new_window', {
+          type:'text',
+          filesrc: res.path,
+          filename: res.name,
+          size: res.size,
+        })
+      } else {
+        this.$store.commit('open_new_window', {
+          type:'text',
+          filesrc: '',
+          filename: '404 not found',
+          size: 0,
+        })
+      }
     }
   }, 
 }
