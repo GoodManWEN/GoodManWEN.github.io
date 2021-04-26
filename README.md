@@ -29,6 +29,22 @@ I happened to write this project because I personally need a project demonstrati
 
 If your project is hosted by **Github Pages**, you can simply modify the contents of the blog directory and then submit a commit. Content will be update automatically by Actions, and then distributed to the website (there may be a delay in updates due to caching policies).
 
+### About blog features
+
+To make it easier for you to post your articles as hyperlinks on third-party platforms, you can use the following routing form to allow users to open your specified posts directly with a unique link:
+```
+   https://{{host}}/#/desktop/post/{{article_file_name}}.md
+
+   e.g.
+   https://GoodManWEN.github.io/#/desktop/post/README.md
+```
+
+Notably that program will recursively look for the first matched file in the file structure, which means that if you have multiple files using the same file name (like README.md) but distributed in different folders, this will only match the first of them.
+
+If there is no match, then a 404 file will be returned.
+
+Regarding the abstract logic, the article will be titled with the first recognized `# line` and the first subsequent line without a punctuation mark will be recognized as abstract.
+
 ### What if I'd like to customize the music module?
 
 This project has a simple built-in music module built using Aplayer. Considering the copyright policy, you need to set up your music play list yourself. The relevant configuration files are stored in `/public/musics.json`, you need to follow the same format when edit. Generally speaking, you need to focus on the name, the author, the link to the source and the link to the cover of the music.
