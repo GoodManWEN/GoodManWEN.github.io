@@ -1,4 +1,6 @@
-# GoodManWEN.github.io
+![](https://raw.githubusercontent.com/GoodManWEN/GoodManWEN.github.io/main/misc/figure.png)
+
+# About GoodManWEN.github.io
 
 A website simulating linux system's GUI, using theme of Deepin distro. You can write blogs with markdown and use it to serve your own technical resumes.
 
