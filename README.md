@@ -39,7 +39,7 @@ To make it easier for you to post your articles as hyperlinks on third-party pla
    https://GoodManWEN.github.io/#/desktop/post/README.md
 ```
 
-Notably that program will recursively look for the first matched file in the file structure, which means that if you have multiple files using the same file name (like README.md) but distributed in different folders, this will only match the first of them.
+Notably that program will recursively look for the first matched file in the file structure, which means that if you have multiple files using the same file name (like README.md) but distributed in different folders, this will only match the first of them. 
 
 If there is no match, then a 404 file will be returned.
 
