@@ -1,4 +1,4 @@
-# GoodManWEN.github.io
+# About GoodManWEN.github.io
 
 A web-driven blog simulating linux system's GUI, using theme of Deepin distro. You can use markdown to write blogs and use it to serve your own technical resumes.
 
