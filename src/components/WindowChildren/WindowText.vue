@@ -50,7 +50,7 @@
             <span class="tw-hidden">1</span>
           </div>
           <div class="tw-w-full  tw-bg-white tw-pl-5 tw-pr-3 tw-py-1.5 change-srollbar" style="overflow:auto" :style="{'height': cont_height +'px'}">
-            <markdown-it-vue class="md-body" :content="content" :style="{'width':cont_width+'px !important'}" />
+            <markdown-it-vue class="md-body zoomined-frame" :content="content" :style="{'width':cont_width+'px !important'}" :options="{markdownIt: {html: true}}"/>
           </div>
         </div>
       </div>

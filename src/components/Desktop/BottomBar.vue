@@ -18,6 +18,7 @@
             <Icon :srcc="'doc'" mode="large" class=" tw-ml-3" @button_clicked="text_clicked" :tagcont="'Text Editor'" :cfocus="$store.state.current_focus_type==='text'" :fshow="has_text" v-if="has_text"/>
             <Icon :srcc="'browser'" mode="large"  class=" tw-ml-3" @button_clicked="browser_clicked" :tagcont="'Browser'" :cfocus="$store.state.current_focus_type==='browser'" :fshow="has_browser"/>
             <Icon :srcc="'music'" mode="large"  class=" tw-ml-3" @button_clicked="music_clicked" :tagcont="'Music'" :cfocus="$store.state.current_focus_type==='music'" :fshow="has_music"/>
+            <Icon :srcc="'vscode'" mode="large"  class=" tw-ml-3" @button_clicked="vscode_clicked" :tagcont="'vscode'" :cfocus="$store.state.current_focus_type==='vscode'" :fshow="has_vscode"/>
             <Icon :srcc="'settings'" mode="large"  class=" tw-ml-3" @button_clicked="settings_clicked" :tagcont="'Settings'" :cfocus="$store.state.current_focus_type==='settings'" :fshow="has_settings"/>
             <Icon :srcc="'shell'" mode="large"  class=" tw-ml-3" @button_clicked="terminal_clicked" :tagcont="'Terminal'" :cfocus="$store.state.current_focus_type==='terminal'" :fshow="has_terminal"/>
           </div>
@@ -100,12 +101,16 @@ export default {
         browser:false,
         music:false,
         settings:false,
-        terminal:false
+        terminal:false,
+        vscode:false,
       }
+      let keys = Object.keys(status)
       for (let item of this.$store.state.window_list) {
-        status[item.type] = true
+        if (keys.indexOf(item.type) >= 0) {
+          status[item.type] = true
+        }
       }
-      for (let key of Object.keys(status)) {
+      for (let key of keys) {
         this['has_'+key] = status[key]
       }
     },
@@ -187,6 +192,14 @@ export default {
         this.$store.commit('open_new_window', {'type':'terminal'})
       }
       this.$store.commit('refresh_window_focus', {'type':'terminal'})
+    },
+    vscode_clicked(){
+      if (this.has_vscode) {
+        this.$store.commit('switch_global_window_show_status', {'type':'vscode'})
+      } else {
+        this.$store.commit('open_new_window', {'type':'vscode'})
+      }
+      this.$store.commit('refresh_window_focus', {'type':'vscode'})
     },
     text_clicked() {
       this.$store.commit('switch_global_window_show_status', {'type':'text'})

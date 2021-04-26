@@ -12,6 +12,7 @@
         <WindowFolder v-if="item.type==='explorer'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :filemap="map" :openpath="item.openpath" :zindex="item.zindex" :minimized="item.minimized"/>
         <WindowText v-if="item.type==='text'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :filesrc="item.filesrc" :filename="item.filename" :size="item.size" :zindex="item.zindex" :minimized="item.minimized"/>
         <WindowBrowser v-if="item.type==='browser'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :zindex="item.zindex" :default_width="item.default_width" :minimized="item.minimized"/>
+        <WindowVSCode v-if="item.type==='vscode'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :zindex="item.zindex" :minimized="item.minimized"/>
         <WindowMusic v-if="item.type==='music'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :zindex="item.zindex" :default_width="item.default_width" :default_height="item.default_height" :fixedsize="item.fixedsize" :minimized="item.minimized"/>
         <WindowSetting v-if="item.type==='settings'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :zindex="item.zindex" :minimized="item.minimized"/>
         <WindowTerminal v-if="item.type==='terminal'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :zindex="item.zindex" :minimized="item.minimized"/>
@@ -23,6 +24,7 @@
           <KeyBoardMoveIcon @mousedown.native="keyboard_move_down"/>
           <KeyBoard  :mode="'desktop'" @vkey_pressed="vkey_pressed" />
         </div>
+        <!-- <div v-for="item in window_list" :key="item.uuid"> {{item}} </div> -->
         <ContextMenu v-if="context_menu_show&&($store.state.current_focus==='ContextMenu')"/>
       </div>
       <div class="tw-absolute tw-w-1" style="height: calc(100% - 20px)">
@@ -40,6 +42,7 @@ import DesktopFileArray from './DesktopFileArray.vue'
 import SideBar from './SideBar.vue'
 import WindowFolder from '../WindowChildren/WindowFolder.vue'
 import WindowMusic from '../WindowChildren/WindowMusic.vue'
+import WindowVSCode from '../WindowChildren/WindowVSCode.vue'
 import WindowText from '../WindowChildren/WindowText.vue'
 import WindowTerminal from '../WindowChildren/WindowTerminal.vue'
 import WindowBrowser from '../WindowChildren/WindowBrowser.vue'
@@ -57,6 +60,7 @@ export default {
     WindowMusic,
     DesktopFileArray,
     WindowFolder,
+    WindowVSCode,
     WindowBrowser,
     WindowSetting,
     KeyBoard,
