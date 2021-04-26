@@ -17,7 +17,7 @@ Inspired by [abersheeran/only-pipe](https://github.com/abersheeran/only-pipe) , 
 - Statements start with `PIPE` and end with `END` **OR** you can even ellipsis them.
 - There're only two objects(`PIPE` & `END`) and three types(`Filter` ,`Map` & `Reduce`) in namespace, so feel free to use `from pipeit import *`.
 - Convert filter into tuple or capital the first letter, e.g. `map(lambda x:x + 1) => (map , lambda x:x + 1)` or `Map(lambda x:x + 1)` , however **DO NOT MIX USE THEM**.
-- It'll be 10% ~ 20% faster using the original python functional way than using these wrappers.
+- It'll be 10% ~ 20% faster using the original python functional way than using these wrappers. 
 
 ## Example
 
