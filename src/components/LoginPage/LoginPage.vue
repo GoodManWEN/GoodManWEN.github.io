@@ -131,6 +131,7 @@ export default {
       return (Array(n).join(0) + num).slice(-n);
     },
     login_clicked(){
+      // pw check
       if (this.password === this.password_answer) {
         // correct password
         this.login_locked = false;
@@ -142,6 +143,9 @@ export default {
           this.$router.push({
             name: 'Desktop',
           })
+          // full screeen
+          let elem = document.getElementById('app')
+          elem.requestFullscreen();
         },1800)
         return
       } else if (this.password === "") {
