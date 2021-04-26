@@ -142,6 +142,9 @@ export default {
           this.$router.push({
             name: 'Desktop',
           })
+          // full screeen
+          let elem = document.getElementById('app')
+          elem.requestFullscreen();
         },1800)
         return
       } else if (this.password === "") {
