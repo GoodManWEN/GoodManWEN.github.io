@@ -8,7 +8,7 @@
     </template>
     <template v-slot:content>
       <div class="tw-w-full tw-h-full tw-flex tw-overflow-hidden" @click="go_focus">
-        <iframe src="https://github1s.com/GoodManWEN/GoodManWEN.github.io/blob/HEAD/src/components/Interlude.vue" frameborder="0" class=" zoomined-frame "></iframe>
+        <iframe src="https://github1s.com/GoodManWEN/GoodManWEN.github.io/blob/main/src/components/Interlude.vue" frameborder="0" class=" zoomined-frame "></iframe>
         <div class="tw-w-full tw-h-full tw-absolute background-color" style="top:0" v-if="show_blocker">
           <span class="tw-hidden"> this div is to prevent iframe take control over mouse event </span>
         </div>
