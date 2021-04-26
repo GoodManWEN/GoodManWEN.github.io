@@ -20,12 +20,26 @@ export default {
     window.setTimeout(()=>{
       this.$store.commit('hide_interlude')
     },2000)
+    window.setTimeout(()=>{
+      this.exitfullscreen()
+    },4000)
   },
   watch:{
   },
   computed:{
   },
   methods:{
+    exitfullscreen() {
+      if(document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if(document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if(document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      } else if(document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
   }
 }
 </script>
