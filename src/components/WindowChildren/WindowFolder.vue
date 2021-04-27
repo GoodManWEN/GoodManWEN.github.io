@@ -214,9 +214,9 @@ export default {
           }
         }
         if (this.direction_down) {
-          return res
-        } else {
           return -res
+        } else {
+          return res
         }
       }
       result.sort(sortfunc)

@@ -13,7 +13,7 @@ const routes = [
     name: "Down",
     component: Down,
     meta : {
-      title:"No signal."
+      title:"No signal"
     }
   },
   {
@@ -26,7 +26,7 @@ const routes = [
   },
   {
     path: '/desktop/post/:postfilename',
-    name: "Desktop",
+    name: "DesktopWithPost",
     component: Desktop,
     meta : {
       title:"Welcom to WEN's blog"
