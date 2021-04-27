@@ -13,7 +13,7 @@
         <div class="tw-h-9 tw-px-3  tw-flex tw-items-center tw-justify-center tw-bg-mygray-b2  tw-rounded-lg tw-ml-3" style="pointer-events:auto;" :style="{'opacity':global_focus===uuid?'1':'0.85'}">
           <v-icon small>mdi-home-heart</v-icon>
         </div>
-        <div class="tw-h-9 tw-px-3 tw-flex tw-items-center tw-justify-center tw-rounded-lg tw-ml-3 tw-text-sm tw-text-gray-50 tw-font-normal" style="pointer-events:auto;" v-for="(item,i) in open_openpath" :key="i" :class="{'tw-bg-mygray-b2':i!=(open_openpath.length - 1),'tw-bg-mygray-b4':i===(open_openpath.length - 1),'tw-text-mygray-b6':i!=(open_openpath.length - 1),'tw-text-gray-50':i===(open_openpath.length - 1), 'tw-font-semibold':i!=(open_openpath.length - 1),'hover:tw-bg-mygray-b3':i!=(open_openpath.length - 1),'hover:tw-bg-mygray-b5':i===(open_openpath.length - 1)}" :style="{'opacity':global_focus===uuid?'1':'0.85'}">
+        <div class="tw-h-9 tw-px-3 tw-flex tw-items-center tw-justify-center tw-rounded-lg tw-ml-3 tw-text-sm tw-text-gray-50 tw-font-normal" style="pointer-events:auto;" v-for="(item,i) in open_openpath" :key="i" :class="{'tw-bg-mygray-b2':i!=(open_openpath.length - 1),'tw-bg-mygray-b4':i===(open_openpath.length - 1),'tw-text-mygray-b6':i!=(open_openpath.length - 1),'tw-text-gray-50':i===(open_openpath.length - 1), 'tw-font-semibold':i!=(open_openpath.length - 1),'hover:tw-bg-mygray-b3':i!=(open_openpath.length - 1),'hover:tw-bg-mygray-b5':i===(open_openpath.length - 1)}" :style="{'opacity':global_focus===uuid?'1':'0.85'}" @click="switch_supr_class(i)">
           {{item}}
         </div>
       </div>
@@ -412,9 +412,29 @@ export default {
         this.clicks = 0;
       } 
     },
+    switch_supr_class(val){
+      let diff_num = this.open_openpath.length - 1 - val
+      if (diff_num > 0) {
+        for (let j = 0; j < diff_num; j++) {
+          this.open_openpath.pop()
+        }
+        let folder_pointer = this.filemap
+        for (let dirname of this.open_openpath) {
+          for (let item of folder_pointer) {
+            if (item.children === undefined) {
+              continue
+            }
+            if (item.name === dirname) {
+              folder_pointer = item.children
+            }
+          }
+        }
+        this.file_filemap = folder_pointer
+      }
+    },
     mr_clicked(){
       this.$store.commit('show_context_menu')
-    }
+    },
   }
 }
 </script>
