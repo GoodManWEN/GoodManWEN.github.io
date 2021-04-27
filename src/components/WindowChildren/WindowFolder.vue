@@ -274,7 +274,6 @@ export default {
         let e = e || window.event || e.which;
         let moveX = e.clientX;
         let offsetX = this.getOffset(moveX-downX+orn_width,min,max);
-        console.log(offsetX,moveX,downX,orn_width,min,max)
         this.$refs.leftbar.style.width = offsetX + 'px';
         this.body_margin = offsetX + 20
         let name_col_width = name_orn_width + orn_width - offsetX ;
