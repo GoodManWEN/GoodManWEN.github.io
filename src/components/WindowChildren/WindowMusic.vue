@@ -13,6 +13,7 @@
           style="width:500px;height:500px;overflow:scroll"
           :music="firstmusic"
           :list="musiclist"
+          :repeat="'repeat-all'"
         />
       </div>
     </template>
