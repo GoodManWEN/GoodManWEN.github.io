@@ -21,7 +21,7 @@
         <div class="tw-pt-4 tw-pb-1 px-3 tw-flex tw-flex-row tw-justify-start tw-flex-none tw-w-full">
           <div class="tw-text-2xl tw-font-extrabold ml-4">News</div>
         </div>
-        <div class="tw-w-full">
+        <div class="tw-w-full  tw-overflow-scroll">
           <Message v-for="(item,i) in articles_display" :key="i" :title="item.title" :content="item.content" :abstract="item.abstract" :time="item.time" :lastedittime="item.lastedittime" :filename="item.filename" :filesrc="item.filesrc" :filesize="item.filesize" @close_triggered="close_triggered" @delete_item="delete_item"/>
         </div>
       </div>
