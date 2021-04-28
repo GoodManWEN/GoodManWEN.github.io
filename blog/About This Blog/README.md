@@ -1,3 +1,4 @@
+
 # About GoodManWEN.github.io
 
 A website simulating linux system's GUI, using theme of Deepin distro. You can write blogs with markdown and use it to serve your own technical resumes.
@@ -37,7 +38,7 @@ To make it easier for you to post your articles as hyperlinks on third-party pla
    https://GoodManWEN.github.io/#/desktop/post/README.md
 ```
 
-Notably that program will recursively look for the first matched file in the file structure, which means that if you have multiple files using the same file name (like README.md) but distributed in different folders, this will only match the first of them.
+Notably that program will recursively look for the first matched file in the file structure, which means that if you have multiple files using the same file name (like README.md) but distributed in different folders, this will only match the first of them. 
 
 If there is no match, then a 404 file will be returned.
 
@@ -79,6 +80,8 @@ This project is inspired by:
 ### Contributing
 
 Any improvements that wish to improve this site are welcome, you need to contribute to this project by submitting a PR. Since the author himself is not a professional programmer focused on front-end, he is not familiar with the way how front-end tests are deployed, so you shoulddescribe clearly in the PR the reason for your submission, all the places you are modifying, and what we should expect to get out of it.
+
+##### [Guidelines for further development](https://github.com/GoodManWEN/GoodManWEN.github.io/blob/main/misc/Guidelines for further development.md)
 
 
 ### Current deficiencies

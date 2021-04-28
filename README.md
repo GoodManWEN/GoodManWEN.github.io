@@ -82,6 +82,8 @@ This project is inspired by:
 
 Any improvements that wish to improve this site are welcome, you need to contribute to this project by submitting a PR. Since the author himself is not a professional programmer focused on front-end, he is not familiar with the way how front-end tests are deployed, so you shoulddescribe clearly in the PR the reason for your submission, all the places you are modifying, and what we should expect to get out of it.
 
+##### [Guidelines for further development](https://github.com/GoodManWEN/GoodManWEN.github.io/blob/main/misc/Guidelines for further development.md)
+
 
 ### Current deficiencies
 
