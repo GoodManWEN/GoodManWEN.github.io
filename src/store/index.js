@@ -30,6 +30,8 @@ const store = new Vuex.Store({
     context_menu_show:false,
     context_menu_x:0,
     context_menu_y:0,
+    context_menu_bottom_bar_display_mode:false,
+    context_menu_bottom_bar_show_target:'terminal',
     display_article_num:0,
   },
   mutations: {
@@ -232,12 +234,33 @@ const store = new Vuex.Store({
         }
       }
     },
+    close_global_window_same_type(state, payload) {
+      let target_type = payload.type 
+      let i = 0
+      while (i < state.window_list.length) {
+        if (state.window_list[i].type === target_type) {
+          state.window_list.splice(i,1)
+          break
+        } else {
+          i += 1
+        }
+      }
+    },
     show_context_menu(state){
       this.commit('refresh_window_focus', {uuid:"ContextMenu"})
       let e = e || window.event || e.which;
       state.context_menu_x = e.clientX;
       state.context_menu_y = e.clientY;
       state.context_menu_show=true
+    },
+    show_context_menu_bottom_bar(state, payload){
+      this.commit('refresh_window_focus', {uuid:"ContextMenuBottomBar"})
+      let e = e || window.event || e.which;
+      state.context_menu_x = e.clientX;
+      state.context_menu_y = e.clientY;
+      state.context_menu_show=true
+      state.context_menu_bottom_bar_display_mode = payload.mode
+      state.context_menu_bottom_bar_show_target = payload.target
     },
     hide_context_menu(state){
       this.commit('refresh_window_focus', {uuid:""})

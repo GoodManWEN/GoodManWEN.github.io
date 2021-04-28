@@ -14,13 +14,13 @@
         </div>
         <div class="tw-flex-none tw-w-100 tw-h-full tw-hidden lg:tw-block">
           <div class=" tw-w-full tw-h-full tw-flex tw-items-center tw-justify-center">
-            <Icon :srcc="'explorer'" mode="large" class=" tw-ml-3" @button_clicked="explorer_clicked" :tagcont="'File Manager'" :cfocus="$store.state.current_focus_type==='explorer'" :fshow="has_explorer" v-if="has_explorer"/>
-            <Icon :srcc="'doc'" mode="large" class=" tw-ml-3" @button_clicked="text_clicked" :tagcont="'Text Editor'" :cfocus="$store.state.current_focus_type==='text'" :fshow="has_text" v-if="has_text"/>
-            <Icon :srcc="'browser'" mode="large"  class=" tw-ml-3" @button_clicked="browser_clicked" :tagcont="'Browser'" :cfocus="$store.state.current_focus_type==='browser'" :fshow="has_browser"/>
-            <Icon :srcc="'music'" mode="large"  class=" tw-ml-3" @button_clicked="music_clicked" :tagcont="'Music'" :cfocus="$store.state.current_focus_type==='music'" :fshow="has_music"/>
-            <Icon :srcc="'vscode'" mode="large"  class=" tw-ml-3" @button_clicked="vscode_clicked" :tagcont="'vscode'" :cfocus="$store.state.current_focus_type==='vscode'" :fshow="has_vscode"/>
-            <Icon :srcc="'settings'" mode="large"  class=" tw-ml-3" @button_clicked="settings_clicked" :tagcont="'Settings'" :cfocus="$store.state.current_focus_type==='settings'" :fshow="has_settings"/>
-            <Icon :srcc="'shell'" mode="large"  class=" tw-ml-3" @button_clicked="terminal_clicked" :tagcont="'Terminal'" :cfocus="$store.state.current_focus_type==='terminal'" :fshow="has_terminal"/>
+            <Icon :srcc="'explorer'" mode="large" class=" tw-ml-3" @button_clicked="explorer_clicked" :tagcont="'File Manager'" :cfocus="$store.state.current_focus_type==='explorer'" :fshow="has_explorer" v-if="has_explorer" @contextmenu.prevent.native="mr_clicked($event, 'explorer', has_explorer)"/>
+            <Icon :srcc="'doc'" mode="large" class=" tw-ml-3" @button_clicked="text_clicked" :tagcont="'Text Editor'" :cfocus="$store.state.current_focus_type==='text'" :fshow="has_text" v-if="has_text" @contextmenu.prevent.native="mr_clicked($event, 'text', has_text)"/>
+            <Icon :srcc="'browser'" mode="large"  class=" tw-ml-3" @button_clicked="browser_clicked" :tagcont="'Browser'" :cfocus="$store.state.current_focus_type==='browser'" :fshow="has_browser" @contextmenu.prevent.native="mr_clicked($event, 'browser', has_browser)"/>
+            <Icon :srcc="'music'" mode="large"  class=" tw-ml-3" @button_clicked="music_clicked" :tagcont="'Music'" :cfocus="$store.state.current_focus_type==='music'" :fshow="has_music" @contextmenu.prevent.native="mr_clicked($event, 'music', has_music)"/>
+            <Icon :srcc="'vscode'" mode="large"  class=" tw-ml-3" @button_clicked="vscode_clicked" :tagcont="'vscode'" :cfocus="$store.state.current_focus_type==='vscode'" :fshow="has_vscode" @contextmenu.prevent.native="mr_clicked($event, 'vscode', has_vscode)"/>
+            <Icon :srcc="'settings'" mode="large"  class=" tw-ml-3" @button_clicked="settings_clicked" :tagcont="'Settings'" :cfocus="$store.state.current_focus_type==='settings'" :fshow="has_settings" @contextmenu.prevent.native="mr_clicked($event, 'settings', has_settings)"/>
+            <Icon :srcc="'shell'" mode="large"  class=" tw-ml-3" @button_clicked="terminal_clicked" :tagcont="'Terminal'" :cfocus="$store.state.current_focus_type==='terminal'" :fshow="has_terminal" @contextmenu.prevent.native="mr_clicked($event, 'terminal', has_terminal)"/>
           </div>
         </div>
         <div class=" tw-absolute tw-h-full tw-flex tw-items-center tw-justify-center tw-flex-row-reverse tw-pr-2" style="right:0">
@@ -225,6 +225,10 @@ export default {
     showdesktop_clicked(){
       this.$store.commit('switch_show_desktop')
     },
+    mr_clicked(event, target, mode){
+      event.stopPropagation()
+      this.$store.commit('show_context_menu_bottom_bar' , {'target':target, 'mode':mode})
+    }
   }
 }
 </script>

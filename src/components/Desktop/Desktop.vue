@@ -26,6 +26,7 @@
         </div>
         <!-- <div v-for="item in window_list" :key="item.uuid"> {{item}} </div> -->
         <ContextMenu v-if="context_menu_show&&($store.state.current_focus==='ContextMenu')"/>
+        <ContextMenuBottomBar v-if="context_menu_show&&($store.state.current_focus==='ContextMenuBottomBar')" :mode="$store.state.context_menu_bottom_bar_display_mode" :target="$store.state.context_menu_bottom_bar_show_target"/>
       </div>
       <div class="tw-absolute tw-w-1" style="height: calc(100% - 20px)">
         <DesktopFileArray :filemap="map"/>
@@ -50,6 +51,7 @@ import WindowSetting from '../WindowChildren/WindowSetting.vue'
 import KeyBoard from '../Keyboard/KeyBoard.vue'
 import KeyBoardMoveIcon from '../Keyboard/KeyBoardMoveIcon.vue'
 import ContextMenu from '../ContextMenu/ContextMenu.vue'
+import ContextMenuBottomBar from '../ContextMenu/ContextMenuBottomBar.vue'
 
 export default {
   name: 'Desktop',
@@ -66,7 +68,8 @@ export default {
     KeyBoard,
     KeyBoardMoveIcon,
     WindowTerminal,
-    ContextMenu
+    ContextMenu,
+    ContextMenuBottomBar
   },
   data(){
     return {
