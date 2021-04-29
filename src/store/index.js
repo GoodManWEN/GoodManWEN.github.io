@@ -240,7 +240,6 @@ const store = new Vuex.Store({
       while (i < state.window_list.length) {
         if (state.window_list[i].type === target_type) {
           state.window_list.splice(i,1)
-          break
         } else {
           i += 1
         }
