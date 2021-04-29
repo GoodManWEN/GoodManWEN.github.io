@@ -42,7 +42,7 @@ Notably that program will recursively look for the first matched file in the fil
 
 If there is no match, then a 404 file will be returned.
 
-Regarding the abstract logic, the article will be titled with the first recognized `# line` and the first subsequent line without a punctuation mark will be recognized as abstract.
+Regarding the logic to generate title & abstract, the article will be titled with the first recognized `# line` and the first subsequent line without a punctuation mark will be recognized as abstract.
 
 ### What if I'd like to customize the music module?
 
