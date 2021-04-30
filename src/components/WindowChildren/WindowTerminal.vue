@@ -88,19 +88,7 @@ export default {
         this.trim_end()
       } else if (event.keyCode === 38||event.keyCode === 40){//resume history cmd
         event.preventDefault();
-        const hisLen = this.history_cmd_stack.length
-        if(hisLen===0){
-          return;
-        }
-        let nextHisIndex = event.keyCode === 38?this.history_cmd_index+1:this.history_cmd_index-1;
-        if(nextHisIndex>=hisLen)
-        nextHisIndex=hisLen-1;
-        if(nextHisIndex<0)
-        nextHisIndex=0;
-        const hisCmd = this.history_cmd_stack[nextHisIndex]
-        this.cmd_clear_last_line()
-        this.input_text += hisCmd
-        this.history_cmd_index=nextHisIndex
+        this.cmd_backtracking(event)
       } else {//input chars
         let cursor_start = this.$refs.textarea_ele.selectionStart;
         
@@ -316,6 +304,23 @@ export default {
         this.push_output("Current available commands: ['ls', 'cd', 'cat', 'clear' ,'halt'].")
         this.cmd_reset()
       }
+    },
+    cmd_backtracking(e){
+        const hisLen = this.history_cmd_stack.length
+        if(hisLen===0){
+          return;
+        }
+        let nextHisIndex = e.keyCode === 38?this.history_cmd_index+1:this.history_cmd_index-1;
+        if(nextHisIndex>=hisLen){
+          nextHisIndex=hisLen-1;
+        }
+        if(nextHisIndex<0){
+          nextHisIndex=0;
+        }
+        const hisCmd = this.history_cmd_stack[nextHisIndex]
+        this.cmd_clear_last_line()
+        this.input_text += hisCmd
+        this.history_cmd_index=nextHisIndex
     },
     push_output(val){
       this.input_text += val + '\n'
