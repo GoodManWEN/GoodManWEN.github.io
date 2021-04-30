@@ -14,12 +14,12 @@ Most of the left-click operations in the screen are left to the global status ma
 - Dealing with focus issues, windows selected most recently by left click should be clearly highlighted, while other windows, icons, etc. should be clearly blur.
 - Dealing with the right-click context menu, it has some logic of its own, generally speaking context menus will always disappear when you tap on a different location.
 
-The window's own size & resize event is managed by itself, as they usually do not conflict with any other logic.
+The window's own resize & move event is managed by itself, as they usually do not conflict with any other logic.
 
 The exception is that the window's closing animation is handled by itself, which is a design fault that it was not initially considered as the closing event could come from outside the window itself.
 
 ### And that's it
 
-All above are pretty much the entire logic. Since we're not writting a real GUI, most of the logic stays simple. Hope this project reduces your workload if you want to do similar development. Basically if you just want to add your own window based on this framework, then the only thing you need do is to create new `WindowChildren` component and design its trigger button. If you wish to change the entire theme. And if you want to change the whole theme, you basically need to redesign the taskbar components (including some buttons and some window styles), after all the desktop background is always easy to change.
+All above are pretty much the entire logic. Since we're not writting a real GUI, most of the logic stays simple. Hope this project reduces your workload if you want to do similar development. Basically if you just want to add your own window based on this framework, then the only thing you need do is to create new `WindowChildren` component and design its trigger button. And if you wish to change the entire theme, you basically need to redesign the taskbar components (including some buttons and some window styles), after all the desktop background is always easy to change.
 
 Thanks for watching.
