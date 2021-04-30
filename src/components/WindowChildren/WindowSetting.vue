@@ -87,7 +87,7 @@
               </div>
               <div class="tw-w-full tw-h-full" v-if="selected_tag === 'Resume'">
                 <div ref="overall_page" class="tw-w-full tw-h-full tw-items-center tw-flex tw-flex-col tw-justify-center" style="text-align:center">
-                  <div class="tw-text-4xl tw-mt-2 tw-tracking-wider"> Comming Soon </div>
+                  <div class="tw-text-4xl tw-mt-2 tw-tracking-wider"> Coming Soon </div>
                 </div>
               </div>
             </div>
