@@ -35,7 +35,7 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action[Bot]"
-          git add .
+          git add -A
           git commit -m "update built files after user commit"
       - name: Push changes
         uses: ad-m/github-push-action@master
