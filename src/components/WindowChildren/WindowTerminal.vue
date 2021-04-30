@@ -27,7 +27,10 @@ export default {
       input_text:"",
       protection_length:17,
       path_stack:[],
-      terminal_bonus: false,
+      history_cmd_stack:[],
+      history_cmd_index:-1,
+      HISTSIZE:5,
+      terminal_bonus: false
     }
   },
   props:{
@@ -76,14 +79,31 @@ export default {
       },150)
     },
     messageSendlisten(event) {
-      if (event.keyCode === 13) {
+      if (event.keyCode === 13) {//apply cmd
         event.preventDefault(); 
         this.new_cmd_commit()
-      } else if (event.keyCode === 8) {
+        this.history_cmd_index=-1
+      } else if (event.keyCode === 8) {//backspace
         event.preventDefault(); 
         this.trim_end()
-      } else {
+      } else if (event.keyCode === 38||event.keyCode === 40){//resume history cmd
+        event.preventDefault();
+        const hisLen = this.history_cmd_stack.length
+        if(hisLen===0){
+          return;
+        }
+        let nextHisIndex = event.keyCode === 38?this.history_cmd_index+1:this.history_cmd_index-1;
+        if(nextHisIndex>=hisLen)
+        nextHisIndex=hisLen-1;
+        if(nextHisIndex<0)
+        nextHisIndex=0;
+        const hisCmd = this.history_cmd_stack[nextHisIndex]
+        this.cmd_clear_last_line()
+        this.input_text += hisCmd
+        this.history_cmd_index=nextHisIndex
+      } else {//input chars
         let cursor_start = this.$refs.textarea_ele.selectionStart;
+        
         while (cursor_start < this.protection_length) {
           this.$refs.textarea_ele.selectionStart += 1
           cursor_start += 1
@@ -104,7 +124,10 @@ export default {
       let words = this.input_text.substring(this.protection_length,this.input_text.length);
       this.protection_length += words.length
       words = words.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
-      
+      //add to command history
+      if(words!=''&&(words.length==0||words.length>0&&words!=this.history_cmd_stack[-1])){
+      this.history_cmd_stack.length>=this.HISTSIZE&&this.history_cmd_stack.pop()
+      this.history_cmd_stack.unshift(words)}
       // bonus
       if (this.terminal_bonus) {
         return 
@@ -297,6 +320,16 @@ export default {
     push_output(val){
       this.input_text += val + '\n'
       this.protection_length += val.length + 1
+    },
+    cmd_clear_last_line(){//replace last line with header
+      const lastItr = this.input_text.lastIndexOf('\n');
+      if(lastItr==-1){
+        this.input_text = this.header
+      }else{
+        this.input_text = this.input_text.slice(0,lastItr+1)+this.header
+        this.protection_length = this.header.length
+      }
+        this.protection_length = this.input_text.length
     },
     cmd_reset(){
       this.input_text += this.header
