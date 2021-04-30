@@ -27,6 +27,7 @@ export default {
       input_text:"",
       protection_length:17,
       path_stack:[],
+      terminal_bonus: false,
     }
   },
   props:{
@@ -103,6 +104,25 @@ export default {
       let words = this.input_text.substring(this.protection_length,this.input_text.length);
       this.protection_length += words.length
       words = words.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
+      
+      // bonus
+      if (this.terminal_bonus) {
+        return 
+      }
+      if ((words.length === 8) && (words.substr(0, 6)==='rm -rf')) {
+        document.body.style.cursor='progress'
+        this.push_output("")
+        this.terminal_bonus = true
+        window.setTimeout(()=>{
+          document.body.style.cursor='default'
+          this.$router.push({
+            name: 'Down',
+          })
+        },2800)
+        return 
+      }
+
+      // Normal handling
       if (words.length === 0) {
         this.push_output("")
         this.cmd_reset()
