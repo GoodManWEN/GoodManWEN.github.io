@@ -71,7 +71,7 @@ export default {
       has_browser:false,
       has_settings:false,
       has_terminal:false,
-      has_vscode:false,
+      has_vscode:false
     }
   },
   created(){
@@ -163,8 +163,11 @@ export default {
       this.date_minute = date.getMinutes();
     },
     browser_clicked(){
+      console.log('browser');
       if (this.has_browser) {
+        if(this.should_trigger_hide_window({'type':'browser'})){
         this.$store.commit('switch_global_window_show_status', {'type':'browser'})
+        }
       } else {
         this.$store.commit('open_new_window', {'type':'browser'})
       }
@@ -172,7 +175,9 @@ export default {
     },
     music_clicked(){
       if (this.has_music) {
+        if(this.should_trigger_hide_window({'type':'music'})){
         this.$store.commit('switch_global_window_show_status', {'type':'music'})
+        }
       } else {
         this.$store.commit('open_new_window', {'type':'music'})
       }
@@ -180,7 +185,9 @@ export default {
     },
     settings_clicked(){
       if (this.has_settings) {
+        if(this.should_trigger_hide_window({'type':'settings'})){
         this.$store.commit('switch_global_window_show_status', {'type':'settings'})
+        }
       } else {
         this.$store.commit('open_new_window', {'type':'settings'})
       }
@@ -188,7 +195,9 @@ export default {
     },
     terminal_clicked() {
       if (this.has_terminal) {
-        this.$store.commit('switch_global_window_show_status', {'type':'terminal'})
+        if(this.should_trigger_hide_window({'type':'terminal'})){
+          this.$store.commit('switch_global_window_show_status', {'type':'terminal'})
+        }
       } else {
         this.$store.commit('open_new_window', {'type':'terminal'})
       }
@@ -196,7 +205,9 @@ export default {
     },
     vscode_clicked(){
       if (this.has_vscode) {
+        if(this.should_trigger_hide_window({'type':'vscode'})){
         this.$store.commit('switch_global_window_show_status', {'type':'vscode'})
+        }
       } else {
         this.$store.commit('open_new_window', {'type':'vscode'})
       }
@@ -207,7 +218,9 @@ export default {
       this.$store.commit('refresh_window_focus', {'type':'text'})
     },
     explorer_clicked() {
-      this.$store.commit('switch_global_window_show_status', {'type':'explorer'})
+      if(this.should_trigger_hide_window({'type':'explorer'})){
+        this.$store.commit('switch_global_window_show_status', {'type':'explorer'})
+      }
       this.$store.commit('refresh_window_focus', {'type':'explorer'})
     },
     keyboard_clicked() {
@@ -221,6 +234,20 @@ export default {
           name: 'LoginPage',
         })
       },800)
+    },
+    should_trigger_hide_window(target){
+      let allHide=true//if all target window is hidden
+      let haveTarget=false
+       for (let item of this.$store.state.window_list) {
+        if (item.type === target.type) {
+          haveTarget=true;
+          allHide&&=item.minimized;
+          if(!item.minimized&&(this.$store.state.window_list.length==1||item.zindex==999)){
+          return true//found a not nimimized target window which is on the top
+          }
+        }
+      }
+      return haveTarget&&allHide//when no target found or not all target window hidden retrun false
     },
     showdesktop_clicked(){
       this.$store.commit('switch_show_desktop')
