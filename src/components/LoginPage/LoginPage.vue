@@ -31,7 +31,7 @@
             <div ref="infinite_bar"  class="tw-absolute tw-rounded-lg " style="bottom:12px;height:38px;width:264px;left:12px" :class="{'process-animation':relay,'tw-hidden':!show_loading_bar}"> </div>
           </div>
           <div class="tw-h-full tw-flex tw-justify-center tw-items-center tw-py-3 tw-px-3">
-            <input ref="password_input_bar" v-model="password" type="password" placeholder="Enter your password" autofocus autocomplete class="tw-w-full tw-h-full tw-rounded-lg" style="background-color:rgba(180,190,220,.35);outline-color: rgba(0,119,230);text-align: center">
+            <input ref="password_input_bar" v-model="password" @keyup.enter="login_clicked" type="password" placeholder="Enter your password" autofocus autocomplete class="tw-w-full tw-h-full tw-rounded-lg" style="background-color:rgba(180,190,220,.35);outline-color: rgba(0,119,230);text-align: center">
           </div>
         </div>
         <button class="tw-rounded-full tw-w-12 tw-h-12 tw-mt-2 tw-bg-blue-600 tw-flex tw-items-center tw-justify-center hover:tw-bg-blue-700 tw-outline-none animate__animated" v-if="show_middle" @click="login_clicked" :class="{'animate__shakeX':button_shaking}">
