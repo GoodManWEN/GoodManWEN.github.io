@@ -113,9 +113,10 @@ export default {
       this.protection_length += words.length
       words = words.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
       //add to command history
-      if(words!=''&&(words.length==0||words.length>0&&words!=this.history_cmd_stack[-1])){
+      if(words.length>0&&words!=this.history_cmd_stack[-1]){
       this.history_cmd_stack.length>=this.HISTSIZE&&this.history_cmd_stack.pop()
-      this.history_cmd_stack.unshift(words)}
+      this.history_cmd_stack.unshift(words)
+      }
       // bonus
       if (this.terminal_bonus) {
         return 
@@ -318,23 +319,13 @@ export default {
           nextHisIndex=0;
         }
         const hisCmd = this.history_cmd_stack[nextHisIndex]
-        this.cmd_clear_last_line()
+        this.input_text = this.input_text.substr(0,this.protection_length)//replace last line with header
         this.input_text += hisCmd
         this.history_cmd_index=nextHisIndex
     },
     push_output(val){
       this.input_text += val + '\n'
       this.protection_length += val.length + 1
-    },
-    cmd_clear_last_line(){//replace last line with header
-      const lastItr = this.input_text.lastIndexOf('\n');
-      if(lastItr==-1){
-        this.input_text = this.header
-      }else{
-        this.input_text = this.input_text.slice(0,lastItr+1)+this.header
-        this.protection_length = this.header.length
-      }
-        this.protection_length = this.input_text.length
     },
     cmd_reset(){
       this.input_text += this.header
