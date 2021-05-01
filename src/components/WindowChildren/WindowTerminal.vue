@@ -29,7 +29,7 @@ export default {
       path_stack:[],
       history_cmd_stack:[],
       history_cmd_index:-1,
-      HISTSIZE:5,
+      HISTSIZE:99,
       terminal_bonus: false
     }
   },
