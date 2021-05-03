@@ -164,8 +164,8 @@ export default {
     },
     browser_clicked(){
       if (this.has_browser) {
-        if(this.should_trigger_hide_window({'type':'browser'})){
-        this.$store.commit('switch_global_window_show_status', {'type':'browser'})
+        if (this.window_type_all_hide_or_at_the_top({'type':'browser'})) {
+          this.$store.commit('switch_global_window_show_status', {'type':'browser'})
         }
       } else {
         this.$store.commit('open_new_window', {'type':'browser'})
@@ -174,8 +174,8 @@ export default {
     },
     music_clicked(){
       if (this.has_music) {
-        if(this.should_trigger_hide_window({'type':'music'})){
-        this.$store.commit('switch_global_window_show_status', {'type':'music'})
+        if (this.window_type_all_hide_or_at_the_top({'type':'music'})) {
+          this.$store.commit('switch_global_window_show_status', {'type':'music'})
         }
       } else {
         this.$store.commit('open_new_window', {'type':'music'})
@@ -184,8 +184,8 @@ export default {
     },
     settings_clicked(){
       if (this.has_settings) {
-        if(this.should_trigger_hide_window({'type':'settings'})){
-        this.$store.commit('switch_global_window_show_status', {'type':'settings'})
+        if (this.window_type_all_hide_or_at_the_top({'type':'settings'})) {
+          this.$store.commit('switch_global_window_show_status', {'type':'settings'})
         }
       } else {
         this.$store.commit('open_new_window', {'type':'settings'})
@@ -194,7 +194,7 @@ export default {
     },
     terminal_clicked() {
       if (this.has_terminal) {
-        if(this.should_trigger_hide_window({'type':'terminal'})){
+        if (this.window_type_all_hide_or_at_the_top({'type':'terminal'})) {
           this.$store.commit('switch_global_window_show_status', {'type':'terminal'})
         }
       } else {
@@ -204,8 +204,8 @@ export default {
     },
     vscode_clicked(){
       if (this.has_vscode) {
-        if(this.should_trigger_hide_window({'type':'vscode'})){
-        this.$store.commit('switch_global_window_show_status', {'type':'vscode'})
+        if (this.window_type_all_hide_or_at_the_top({'type':'vscode'})) {
+          this.$store.commit('switch_global_window_show_status', {'type':'vscode'})
         }
       } else {
         this.$store.commit('open_new_window', {'type':'vscode'})
@@ -213,13 +213,13 @@ export default {
       this.$store.commit('refresh_window_focus', {'type':'vscode'})
     },
     text_clicked() {
-      if(this.should_trigger_hide_window({'type':'text'})){
-      this.$store.commit('switch_global_window_show_status', {'type':'text'})
+      if (this.window_type_all_hide_or_at_the_top({'type':'text'})) {
+        this.$store.commit('switch_global_window_show_status', {'type':'text'})
       }
       this.$store.commit('refresh_window_focus', {'type':'text'})
     },
     explorer_clicked() {
-      if(this.should_trigger_hide_window({'type':'explorer'})){
+      if (this.window_type_all_hide_or_at_the_top({'type':'explorer'})) {
         this.$store.commit('switch_global_window_show_status', {'type':'explorer'})
       }
       this.$store.commit('refresh_window_focus', {'type':'explorer'})
@@ -236,19 +236,20 @@ export default {
         })
       },800)
     },
-    should_trigger_hide_window(target){
-      let allHide=true//if all target window is hidden
-      let haveTarget=false
-       for (let item of this.$store.state.window_list) {
-        if (item.type === target.type) {
-          haveTarget=true;
-          allHide&&=item.minimized;
-          if(!item.minimized&&(this.$store.state.window_list.length==1||item.zindex==999)){
-          return true//found a not minized target window which is on the top
-          }
+    window_type_all_hide_or_at_the_top(payload){
+      let max_index = 0;
+      let max_type_name = '';
+      let allHide = true;
+      for (let item of this.$store.state.window_list) {
+        if (item.zindex > max_index && !item.minimized) {
+          max_type_name = item.type
+          max_index = item.zindex
+        }
+        if (item.type === payload.type) {
+          allHide &&= item.minimized;
         }
       }
-      return haveTarget&&allHide//when no target found or not all target window hidden retrun false
+      return max_type_name === payload.type || allHide
     },
     showdesktop_clicked(){
       this.$store.commit('switch_show_desktop')

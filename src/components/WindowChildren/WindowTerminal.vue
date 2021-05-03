@@ -79,19 +79,22 @@ export default {
       },150)
     },
     messageSendlisten(event) {
-      if (event.keyCode === 13) {//apply cmd
+      if (event.keyCode === 13) {
+        //apply cmd
         event.preventDefault(); 
         this.new_cmd_commit()
         this.history_cmd_index=-1
-      } else if (event.keyCode === 8) {//backspace
+      } else if (event.keyCode === 8) {
+        //backspace
         event.preventDefault(); 
         this.trim_end()
-      } else if (event.keyCode === 38||event.keyCode === 40){//resume history cmd
+      } else if (event.keyCode === 38||event.keyCode === 40){
+        //resume history cmd
         event.preventDefault();
         this.cmd_backtracking(event)
-      } else {//input chars
+      } else {
+        //input chars
         let cursor_start = this.$refs.textarea_ele.selectionStart;
-        
         while (cursor_start < this.protection_length) {
           this.$refs.textarea_ele.selectionStart += 1
           cursor_start += 1
@@ -101,7 +104,6 @@ export default {
         let textarea = this.$refs.textarea_ele;
         textarea.scrollTop = textarea.scrollHeight;
       },150)
-      
     },
     trim_end(){
       if (this.input_text.length > this.protection_length) {
@@ -113,9 +115,9 @@ export default {
       this.protection_length += words.length
       words = words.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
       //add to command history
-      if(words.length>0&&words!=this.history_cmd_stack[-1]){
-      this.history_cmd_stack.length>=this.HISTSIZE&&this.history_cmd_stack.pop()
-      this.history_cmd_stack.unshift(words)
+      if (words.length > 0 && words != this.history_cmd_stack[-1]) {
+        this.history_cmd_stack.length>=this.HISTSIZE&&this.history_cmd_stack.pop()
+        this.history_cmd_stack.unshift(words)
       }
       // bonus
       if (this.terminal_bonus) {
@@ -307,21 +309,25 @@ export default {
       }
     },
     cmd_backtracking(e){
-        const hisLen = this.history_cmd_stack.length
-        if(hisLen===0){
-          return;
-        }
-        let nextHisIndex = e.keyCode === 38?this.history_cmd_index+1:this.history_cmd_index-1;
-        if(nextHisIndex>=hisLen){
-          nextHisIndex=hisLen-1;
-        }
-        if(nextHisIndex<0){
-          nextHisIndex=0;
-        }
-        const hisCmd = this.history_cmd_stack[nextHisIndex]
-        this.input_text = this.input_text.substr(0,this.protection_length)//replace last line with header
-        this.input_text += hisCmd
-        this.history_cmd_index=nextHisIndex
+      if (this.terminal_bonus) {
+        return 
+      }
+
+      const hisLen = this.history_cmd_stack.length
+      if(hisLen===0){
+        return;
+      }
+      let nextHisIndex = e.keyCode === 38?this.history_cmd_index+1:this.history_cmd_index-1;
+      if(nextHisIndex>=hisLen){
+        nextHisIndex=hisLen-1;
+      }
+      if(nextHisIndex<0){
+        nextHisIndex=0;
+      }
+      const hisCmd = this.history_cmd_stack[nextHisIndex]
+      this.input_text = this.input_text.substr(0,this.protection_length)//replace last line with header
+      this.input_text += hisCmd
+      this.history_cmd_index=nextHisIndex
     },
     push_output(val){
       this.input_text += val + '\n'
