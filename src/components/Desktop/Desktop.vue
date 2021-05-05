@@ -18,7 +18,7 @@
         <WindowTerminal v-if="item.type==='terminal'" :uuid='item.uuid' :startpos_x="item.spx" :startpos_y="item.spy" :zindex="item.zindex" :minimized="item.minimized"/>
       </div>
     </div>
-    <div ref="realbackground" class="tw-absolute tw-w-full tw-h-full " style="top:0;left:0" @contextmenu.prevent="bg_mr_clicked">
+    <div ref="realbackground" class="tw-absolute tw-w-full tw-h-full realbackground" style="top:0;left:0" @contextmenu.prevent="bg_mr_clicked">
       <div class="tw-absolute tw-w-full " @click="background_clicked" style="pointer-events:auto;height: calc(100% - 100px)">
         <div ref="keyboard_div" class="tw-absolute " style="z-index:1001;width:600px;height:200px;top:0px;left:0px" v-if="desktop_keyboard_show">
           <KeyBoardMoveIcon @mousedown.native="keyboard_move_down"/>
