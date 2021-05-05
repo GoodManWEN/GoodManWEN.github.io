@@ -3,7 +3,7 @@
     <template v-slot:header>
       <div class="tw-flex tw-items-center tw-select-none" style="pointer-events:none;"> 
         <img src="../../assets/images/icons/doc.png" alt="" style="pointer-events:auto;" class=" tw-w-8 tw-h-7 tw-ml-4">
-        <div class="tw-h-9 tw-flex tw-items-center tw-justify-center tw-rounded-lg tw-bg-mygray-b4 hover:tw-bg-mygray-b5 tw-ml-3" style="pointer-events:auto;" :style="{'opacity':global_focus===uuid?'1':'0.85'}">
+        <div class="tw-h-9 tw-flex tw-items-center tw-justify-center tw-rounded-lg tw-bg-mygray-b4 hover:tw-bg-mygray-b5 tw-ml-3" style="pointer-events:auto;" :style="{'opacity':global_focus===uuid?'1':'0.85'}" @click="title_clicked">
           <div class="tw-h-full tw-px-3  tw-text-sm tw-font-normal tw-text-gray-50 tw-pt-2" style="white-space:nowrap;text-overflow: ellipsis;overflow: hidden;max-width:300px" >{{filename}}</div>
         </div>
         <div class="tw-h-9 tw-px-3  tw-flex tw-items-center tw-justify-center tw-bg-mygray-b3  tw-rounded-lg tw-ml-3 hover:tw-bg-mygray-b1 tw-text-mygray-b8" style="pointer-events:auto;">
@@ -81,6 +81,7 @@ export default {
       cont_width: 800,
       cont_width_margin: 76,
       loaded:false,
+      copy_lock:false,
     }
   },
   props:{
@@ -173,6 +174,27 @@ export default {
     },
     window_width_changed(val){
       this.cont_width = val - this.cont_width_margin
+    },
+    title_clicked(){
+      let background = document.getElementsByClassName("realbackground")[0]
+      if (background === undefined || this.copy_lock) {
+        return 
+      }
+      this.copy_lock = true
+      let e = e || window.event || e.which;
+      let downY = e.clientY;
+      let downX = e.clientX;
+      let element = document.createElement('div');
+      element.innerText = "URL has been copied"
+      element.style.cssText = "z-index:1001;white-space:nowrap;top:" + (downY-20) + "px;left:" + downX + "px";
+      element.className = "tw-px-2 tw-py-1 tw-absolute tw-rounded-md tw-bg-gray-200 tw-text-sm tw-tracking-wide tw-text-gray-900  tw-select-none animate__animated";
+      background.appendChild(element)
+      element.className += " animate__fadeOutUp"
+      navigator.clipboard.writeText(document.location.protocol + "//" + window.location.host + "/#/desktop/post/" + this.filename)
+      window.setTimeout(()=>{
+        element.remove()
+        this.copy_lock = false
+      },550)
     },
     mr_clicked(){
       this.$store.commit('show_context_menu')
