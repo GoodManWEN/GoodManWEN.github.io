@@ -8,7 +8,7 @@
     </template>
     <template v-slot:content>
       <div class="tw-w-full tw-h-full tw-flex tw-flex-col tw-font-semibold tw-text-white  tw-leading-7 tw-tracking-wide tw-ml-1">
-        <textarea v-model="input_text" ref="textarea_ele" rows="102400" style="height:530px" class=" tw-outline-none change-srollbar" autofocus @keydown="messageSendlisten" @contextmenu.prevent="mr_clicked()"></textarea>
+        <textarea v-model="input_text" ref="textarea_ele" rows="102400" style="height:530px;resize:none;" class=" tw-outline-none change-srollbar" autofocus @keydown="messageSendlisten" @contextmenu.prevent="mr_clicked()"></textarea>
       </div>
     </template>
   </Window>
