@@ -76,7 +76,7 @@ vue-aplayer
 This project is inspired by:
 - [https://github.com/vivek9patel/vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)
 - [https://codepen.io/Krishna1947/pen/KKgZgLd](https://codepen.io/Krishna1947/pen/KKgZgLd)
-
+- [https://github.com/puruvj/macos-web](https://github.com/puruvj/macos-web)
 
 ### Contributing
 
