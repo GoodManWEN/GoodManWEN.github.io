@@ -102,3 +102,5 @@ The author of this project has no official relationship with deepin, if you wish
 ### Spacial thanks
 
 To you, hope you enjoy this website.
+
+[![Stargazers repo roster for @GoodManWEN/GoodManWEN.github.io](https://reporoster.com/stars/GoodManWEN/GoodManWEN.github.io)](https://github.com/GoodManWEN/GoodManWEN.github.io/stargazers)
