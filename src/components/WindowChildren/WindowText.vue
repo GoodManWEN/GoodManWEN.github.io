@@ -125,6 +125,7 @@ export default {
         this.content = error_message
       }
       this.content = res.data.data
+      console.log(res.data.data)
       this.compute_line_col_num(res.data.data)
       this.$store.commit('refresh_window_focus', {uuid:this.uuid})
       this.loaded = true

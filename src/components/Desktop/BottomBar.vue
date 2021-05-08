@@ -7,7 +7,7 @@
             <div class=" tw-w-full tw-h-full tw-flex tw-items-center  tw-px-2">
               <Icon :srcc="'menu'" mode="large" @button_clicked="{}" :noamine="true" :tagcont="'Starter'"/>
               <Icon :srcc="'desktop'" mode="large" class=" tw-ml-3" @button_clicked="{}" :noamine="true" :tagcont="'Show Desktop'" @click.native="showdesktop_clicked"/>
-              <Icon :srcc="'tasks'" mode="large" class=" tw-ml-3" @button_clicked="{}" :noamine="true" :tagcont="'Multitasking View'"/>
+              <Icon :srcc="'tasks'" mode="large" class=" tw-ml-3" @button_clicked="{}" :noamine="true" :tagcont="'Multitasking View'" @click.native="exit_full_screen"/>
               <div class="vl tw-mx-2"></div>
             </div>
           </div>
@@ -253,6 +253,18 @@ export default {
     },
     showdesktop_clicked(){
       this.$store.commit('switch_show_desktop')
+    },
+    exit_full_screen(){
+      if (document.exitFullscreen) {
+        // catch if it's not a programatical fullscreen
+        document.exitFullscreen().catch(() => {});
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
     },
     mr_clicked(event, target, mode){
       event.stopPropagation()
