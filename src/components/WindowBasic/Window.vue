@@ -251,6 +251,7 @@ export default {
       this.$emit("resize_start")
       this.refocus()
       if (this.full_windowed) {
+        this.$emit("resize_end")
         return ;
       }
       let orn_mousedown = document.onmousedown;
