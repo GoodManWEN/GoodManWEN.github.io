@@ -86,7 +86,7 @@
             </div>
           </div>
           <div class=" tw-flex-none tw-h-6 tw-w-full tw-rounded-br-2xl tw-flex tw-justify-center tw-items-center tw-text-sm tw-text-gray-900">
-            {{13}} Items
+            {{current_dir_list.length}} Items
           </div>
         </div>
       </div>
