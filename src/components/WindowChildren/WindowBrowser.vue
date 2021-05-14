@@ -24,10 +24,9 @@
           <WindowBrowserButton :disabled="false" :icon="'currency-eth'" class="tw-mx-4" :mode="1"/>
         </div>
         <div class=" tw-h-0 tw-border-b tw-border-gray-300" style="width:99%"></div>
-        <!-- <iframe ref="iframe_main" src="https://www.google.com/webhp?igu=1" frameborder="0" class="tw-w-full tw-h-full"></iframe> -->
         <iframe ref="iframe_main" :src="real_src" frameborder="0" class="tw-w-full tw-h-full" onload="mouse_style_none"></iframe>
         <div class="tw-w-full tw-h-full tw-absolute background-color" style="top:0" v-if="show_blocker">
-          <span class="tw-hidden"> this div is to prevent iframe take control over mouse event </span>
+          <span class="tw-hidden"> this div is to prevent iframe take control over mouse event while dragging window </span>
         </div>
       </div>
     </template>
