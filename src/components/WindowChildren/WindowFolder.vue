@@ -362,7 +362,7 @@ export default {
     },
     time_format_converter(val) {
       let newdate = new Date(val * 1000)
-      return newdate.getFullYear() + '/' + this.PrefixZero(newdate.getMonth(),2) + '/' + this.PrefixZero(newdate.getDate(),2) + ' ' + this.PrefixZero(newdate.getHours(),2) + ':' + this.PrefixZero(newdate.getMinutes(),2) + ':' + this.PrefixZero(newdate.getSeconds(),2)
+      return newdate.getFullYear() + '/' + this.PrefixZero(newdate.getMonth() + 1,2) + '/' + this.PrefixZero(newdate.getDate(),2) + ' ' + this.PrefixZero(newdate.getHours(),2) + ':' + this.PrefixZero(newdate.getMinutes(),2) + ':' + this.PrefixZero(newdate.getSeconds(),2)
     },
     size_format_converter(val) {
       if (val < 0) {
