@@ -7,7 +7,15 @@ A website simulating linux system's GUI, using theme of Deepin distro. You can w
 #### [中文文档](https://github.com/GoodManWEN/GoodManWEN.github.io/blob/main/misc/readme_chs.md)
 
 ## Quick Start
-This project is originally designed to be host on github pages. If this is the way you expect, you just need to **fork this repo and start the actions manually**(According to github's default policy, actions will not be started automatically until they are confirmed manually). After setting up, all of your changes in `/blog` directory will be identically projected onto the linked website (according to your settings).
+This project is originally designed to be host on github pages. If this is the way you expect, you follow these steps 
+```
+1. Fork this project.
+2. Goto settings page to link your website to a specified URL.
+3. Start the actions manually (According to github's default policy, actions will not be started 
+   automatically until they are confirmed manually).
+4. Update line 18 of file /.github/workflows/AutoUpdate.yml, connect it to your repo's address.
+```
+After setting up, if your configuration is correct, then the project will run as expected. All of your changes in `/blog` directory will be identically projected onto the linked website (according to your settings).
 
 Nevertheless, some people may want to self-host it (locally), then you should follow these steps:
 ```
