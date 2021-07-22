@@ -1,3 +1,4 @@
+![](https://raw.githubusercontent.com/GoodManWEN/GoodManWEN.github.io/main/misc/figure.png)
 
 # About GoodManWEN.github.io
 
@@ -6,7 +7,17 @@ A website simulating linux system's GUI, using theme of Deepin distro. You can w
 #### [中文文档](https://github.com/GoodManWEN/GoodManWEN.github.io/blob/main/misc/readme_chs.md)
 
 ## Quick Start
-This project is designed to be host on github pages, but nevertheless some people will want to self-host it, then you should follow these steps:
+This project is originally designed to be host on github pages. If this is the way you expect, you follow these steps 
+```
+1. Fork this project.
+2. Goto settings page to link your website to a specified URL.
+3. Start the actions manually (According to github's default policy, actions will not be started 
+   automatically until they are confirmed manually).
+4. Update line 18 of file /.github/workflows/AutoUpdate.yml, connect it to your repo's address.
+```
+After setting up, if your configuration is correct, then the project will run as expected. All of your changes in `/blog` directory will be identically projected onto the linked website (according to your settings).
+
+Nevertheless, some people may want to self-host it (locally), then you should follow these steps:
 ```
 git clone https://github.com/GoodManWEN/GoodManWEN.github.io.git
 cd GoodManWEN.github.io.git
@@ -77,8 +88,6 @@ This project is inspired by:
 - [https://codepen.io/Krishna1947/pen/KKgZgLd](https://codepen.io/Krishna1947/pen/KKgZgLd)
 - [https://github.com/puruvj/macos-web](https://github.com/puruvj/macos-web)
 
-
-
 ### Contributing
 
 Any improvements that wish to improve this site are welcome, you need to contribute to this project by submitting a PR. Since the author himself is not a professional programmer focused on front-end, he is not familiar with the way how front-end tests are deployed, so you shoulddescribe clearly in the PR the reason for your submission, all the places you are modifying, and what we should expect to get out of it.
@@ -103,4 +112,4 @@ The author of this project has no official relationship with deepin, if you wish
 
 To you, hope you enjoy this website.
 
-![Stargazers repo roster for @GoodManWEN/GoodManWEN.github.io](https://reporoster.com/stars/GoodManWEN/GoodManWEN.github.io)
+[![Stargazers repo roster for @GoodManWEN/GoodManWEN.github.io](https://reporoster.com/stars/GoodManWEN/GoodManWEN.github.io)](https://github.com/GoodManWEN/GoodManWEN.github.io/stargazers)
