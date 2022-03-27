@@ -47,3 +47,21 @@ Or you may want a more easy use.
 '1'
 '2'
 ```
+
+Code timer updated in version 2.0, you can easily detect the execution time of code blocks or statements.
+```Python
+from pipit import *
+from functools import reduce
+
+foo = list(range(100))
+for _ in timeit(1e6): # which means loop for 1m times
+    bar = foo | Filter(lambda x: x%3) | Map(lambda x: 10*x) | Reduce(lambda x, y: x+y) | int
+
+with timeit(): # a handwritten for loop is required under context manager mode
+    for _ in range(int(1e6)):
+        bar = reduce(lambda x, y: x+y, map(lambda x: 10*x, filter(lambda x: x%3, foo)))
+
+# output: 
+# [line 5][approximate] time cost / loop: 9.8967234μs
+# [line 8][exact] time cost: 7.0519098s
+```
